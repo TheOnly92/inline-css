@@ -227,6 +227,22 @@ describe('inline-css', function() {
       compare(path.join('test', 'fixtures', 'remove-html-selectors.html'), path.join('test', 'expected', 'remove-html-selectors.html'), options, done);
     });
 
+    it('Should remove html selectors but retain whitelisted id selectors', function(done) {
+      var options = {
+        removeHtmlSelectors: true,
+        whitelist: ['#myId'],
+      };
+      compare(path.join('test', 'fixtures', 'remove-html-selectors-whitelist-id.html'), path.join('test', 'expected', 'remove-html-selectors-whitelist-id.html'), options, done);
+    });
+
+    it('Should remove html selectors but retain whitelisted class selectors', function(done) {
+      var options = {
+        removeHtmlSelectors: true,
+        whitelist: ['.myClass'],
+      };
+      compare(path.join('test', 'fixtures', 'remove-html-selectors-whitelist-class.html'), path.join('test', 'expected', 'remove-html-selectors-whitelist-class.html'), options, done);
+    });
+
     it('Should error when passed malformed CSS', function(done) {
         var file = getFile(path.join('test', 'fixtures', 'malformed.html'));
         var options = {
