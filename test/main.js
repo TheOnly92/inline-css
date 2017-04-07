@@ -246,7 +246,7 @@ describe('inline-css', function() {
     it('Should remove html selectors but retain certain whitelisted class selectors', function(done) {
       var options = {
         removeHtmlSelectors: true,
-        whitelist: ['.myClass'],
+        whitelist: ['.myClass', '.abcClass'],
       };
       compare(path.join('test', 'fixtures', 'remove-html-selectors-whitelist-multiple-class.html'), path.join('test', 'expected', 'remove-html-selectors-whitelist-multiple-class.html'), options, done);
     });
