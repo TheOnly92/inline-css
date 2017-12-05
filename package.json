@@ -1,5 +1,5 @@
 {
-  "name": "inline-css",
+  "name": "@vizanda/inline-css",
   "version": "2.2.2",
   "description": "Inline css into an html file.",
   "main": "index.js",
